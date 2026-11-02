@@ -149,8 +149,8 @@ function Methodology() {
         </div>
 
         {/* Desktop: radial flowchart */}
-        <div className="relative mx-auto mt-16 hidden h-[560px] w-[560px] lg:block">
-          <svg viewBox="0 0 560 560" className="absolute inset-0 h-full w-full">
+        <div className="relative mx-auto mt-16 hidden h-[560px] w-[880px] lg:block">
+          <svg viewBox="0 0 560 560" className="absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2">
             <defs>
               <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" className="fill-gold-deep" />
