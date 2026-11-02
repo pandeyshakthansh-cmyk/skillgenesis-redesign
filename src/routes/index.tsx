@@ -42,7 +42,7 @@ function Logo() {
       </span>
       <span className="flex flex-col leading-none">
         <Brand />
-        <span className="mt-1 font-brand text-[9px] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+        <span className="mt-1 font-brand text-[9px] font-medium uppercase tracking-[0.3em] whitespace-nowrap text-muted-foreground">
           Thinking Beyond Degrees
         </span>
       </span>
@@ -53,16 +53,16 @@ function Logo() {
 function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-ivory/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1680px] items-center justify-between gap-6 px-6 py-4 lg:px-28">
+      <div className="mx-auto flex max-w-[1680px] items-center justify-between gap-6 px-6 py-4 lg:px-12 2xl:px-28">
         <Logo />
-        <nav className="hidden items-center gap-8 xl:flex">
+        <nav className="hidden items-center gap-6 2xl:gap-8 xl:flex">
           {nav.map((n) => (
-            <a key={n} href="#" className="text-[15px] font-semibold text-navy/80 transition-colors hover:text-navy">{n}</a>
+            <a key={n} href="#" className="whitespace-nowrap text-[15px] font-semibold text-navy/80 transition-colors hover:text-navy">{n}</a>
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href="#" className="hidden rounded-full border border-navy/20 px-6 py-3 text-[15px] font-semibold text-navy hover:bg-navy/5 md:inline-flex">Join SkillGenesis</a>
-          <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[15px] font-semibold text-navy hover:brightness-105">
+          <a href="#" className="hidden rounded-full border border-navy/20 px-6 py-3 text-[15px] font-semibold text-navy hover:bg-navy/5 md:inline-flex whitespace-nowrap">Join SkillGenesis</a>
+          <a href="#" className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-gold px-6 py-3 text-[15px] font-semibold text-navy hover:brightness-105">
             Explore Programs <ArrowUpRight className="h-4 w-4" />
           </a>
         </div>
