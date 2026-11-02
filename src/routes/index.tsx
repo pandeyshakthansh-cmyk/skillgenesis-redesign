@@ -168,10 +168,10 @@ function Methodology() {
               <p className="mt-2 font-brand text-[9px] font-medium uppercase tracking-[0.3em] text-navy-foreground/60">Thinking Beyond Degrees</p>
             </div>
           </div>
-          <MethodNode m={methodology[0]} className="absolute left-1/2 top-0 -translate-x-1/2" />
-          <MethodNode m={methodology[1]} className="absolute right-0 top-1/2 -translate-y-1/2" />
-          <MethodNode m={methodology[2]} className="absolute bottom-0 left-1/2 -translate-x-1/2" />
-          <MethodNode m={methodology[3]} className="absolute left-0 top-1/2 -translate-y-1/2" />
+          <MethodNode m={methodology[0]!} className="absolute left-1/2 top-0 -translate-x-1/2" />
+          <MethodNode m={methodology[1]!} className="absolute right-0 top-1/2 -translate-y-1/2" />
+          <MethodNode m={methodology[2]!} className="absolute bottom-0 left-1/2 -translate-x-1/2" />
+          <MethodNode m={methodology[3]!} className="absolute left-0 top-1/2 -translate-y-1/2" />
         </div>
 
         {/* Mobile: vertical flowchart */}
