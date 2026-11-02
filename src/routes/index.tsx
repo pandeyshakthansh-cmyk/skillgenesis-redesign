@@ -116,6 +116,82 @@ function Hero() {
   );
 }
 
+const methodology = [
+  { n: "01", title: "Learn", desc: "Build strong conceptual and technical foundations.", icon: GraduationCap },
+  { n: "02", title: "Apply", desc: "Use knowledge through tools, assignments and simulations.", icon: PenTool },
+  { n: "03", title: "Solve", desc: "Work on practical challenges and develop solutions.", icon: Lightbulb },
+  { n: "04", title: "Demonstrate", desc: "Showcase skills through projects, portfolios and presentations.", icon: Rocket },
+];
+
+function MethodNode({ m, className }: { m: (typeof methodology)[number]; className?: string }) {
+  return (
+    <div className={`w-64 rounded-2xl border border-navy/10 bg-ivory p-5 text-left shadow-lg ${className ?? ""}`}>
+      <div className="flex items-center gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-navy text-gold"><m.icon className="h-5 w-5" /></span>
+        <div>
+          <p className="font-brand text-[10px] font-medium uppercase tracking-[0.25em] text-gold-deep">{m.n}</p>
+          <p className="font-brand text-lg font-extrabold text-navy">{m.title}</p>
+        </div>
+      </div>
+      <p className="mt-3 text-sm leading-relaxed text-navy/70">{m.desc}</p>
+    </div>
+  );
+}
+
+function Methodology() {
+  return (
+    <section className="bg-cream">
+      <div className="mx-auto max-w-[1680px] px-6 py-20 lg:px-28 lg:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="flex items-center justify-center gap-4 text-sm font-semibold uppercase tracking-[0.3em] text-navy"><span className="h-px w-10 bg-gold-deep" />The SkillGenesis Methodology<span className="h-px w-10 bg-gold-deep" /></p>
+          <h2 className="mt-6 text-4xl font-extrabold tracking-tight text-navy md:text-6xl">Learn. Apply. Solve. <span className="text-gold-deep">Demonstrate.</span></h2>
+          <p className="mt-6 text-lg font-light leading-relaxed text-navy/70">Knowledge becomes valuable when you know how to apply it. Every learning experience moves you closer to practical competence.</p>
+        </div>
+
+        {/* Desktop: radial flowchart */}
+        <div className="relative mx-auto mt-16 hidden h-[560px] w-[560px] lg:block">
+          <svg viewBox="0 0 560 560" className="absolute inset-0 h-full w-full">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" className="fill-gold-deep" />
+              </marker>
+            </defs>
+            <circle cx="280" cy="280" r="190" fill="none" className="stroke-navy/15" strokeWidth="2" strokeDasharray="6 8" />
+            <path d="M 414 148 A 190 190 0 0 1 470 280" fill="none" className="stroke-gold-deep" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <path d="M 470 280 A 190 190 0 0 1 414 412" fill="none" className="stroke-gold-deep" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <path d="M 146 412 A 190 190 0 0 1 90 280" fill="none" className="stroke-gold-deep" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <path d="M 90 280 A 190 190 0 0 1 146 148" fill="none" className="stroke-gold-deep" strokeWidth="2.5" markerEnd="url(#arrow)" />
+          </svg>
+          <div className="absolute left-1/2 top-1/2 grid h-44 w-44 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-navy text-center shadow-2xl">
+            <div>
+              <p className="font-brand text-2xl font-extrabold leading-tight"><span className="text-brand-blue">Skill</span><span className="text-gold">Genesis</span></p>
+              <p className="mt-2 font-brand text-[9px] font-medium uppercase tracking-[0.3em] text-navy-foreground/60">Thinking Beyond Degrees</p>
+            </div>
+          </div>
+          <MethodNode m={methodology[0]} className="absolute left-1/2 top-0 -translate-x-1/2" />
+          <MethodNode m={methodology[1]} className="absolute right-0 top-1/2 -translate-y-1/2" />
+          <MethodNode m={methodology[2]} className="absolute bottom-0 left-1/2 -translate-x-1/2" />
+          <MethodNode m={methodology[3]} className="absolute left-0 top-1/2 -translate-y-1/2" />
+        </div>
+
+        {/* Mobile: vertical flowchart */}
+        <div className="mx-auto mt-12 flex max-w-md flex-col items-center gap-2 lg:hidden">
+          <div className="grid w-full place-items-center rounded-2xl bg-navy px-6 py-5 text-center shadow-xl">
+            <p className="font-brand text-xl font-extrabold"><span className="text-brand-blue">Skill</span><span className="text-gold">Genesis</span></p>
+            <p className="mt-1 font-brand text-[9px] font-medium uppercase tracking-[0.3em] text-navy-foreground/60">Thinking Beyond Degrees</p>
+          </div>
+          {methodology.map((m) => (
+            <div key={m.n} className="flex w-full flex-col items-center gap-2">
+              <ArrowRight className="h-5 w-5 rotate-90 text-gold-deep" />
+              <MethodNode m={m} className="w-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Pillars() {
   const tags = ["Python", "SQL", "Analytics", "Cloud", "Communication", "Finance", "AI"];
   return (
@@ -303,6 +379,7 @@ function Index() {
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <Methodology />
       <Pillars />
       <Categories />
       <Employers />
